@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Application Test Suite">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html"
+             target="tests/coverage/html"
+             showUncoveredFiles="true"
+             lowUpperBound="60"
+             highLowerBound="95" />
+        <log type="coverage-clover"
+             target="tests/coverage/clover.xml"
+             showUncoveredFiles="true" />
+        <log type="coverage-php"
+             target="tests/coverage/coverage.serialized"
+             showUncoveredFiles="true" />
+        <log type="coverage-text"
+             target="php://stdout"
+             showUncoveredFiles="true" />
+        <log type="testdox-html" target="tests/coverage/testdox.html" />
+        <log type="testdox-text" target="php://stdout" />
+    </logging>
+<!--    <php>-->
+<!--        <env name="APP_ENV" value="local"/>-->
+<!--        <env name="CACHE_DRIVER" value="redis"/>-->
+<!--        <env name="QUEUE_DRIVER" value="sync"/>-->
+<!--        <env name="CONFIGURATION_URL" value="http://configuration.service:81/"/>-->
+<!--        <env name="REDIS_HOST" value="redis"/>-->
+<!--        <env name="REDIS_PORT" value="6379"/>-->
+<!--    </php>-->
+</phpunit>

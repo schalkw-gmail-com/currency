@@ -1,0 +1,31 @@
+{
+  "name": "packages/currency",
+  "description": "Adds currency related functions to your project",
+  "license": "proprietary",
+  "type": "package",
+  "authors": [
+    {
+      "name": "Schalk Wepener",
+      "email": "schalk.wepener@payfast.co.za"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "PayFast\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "PayFast\\Providers\\CurrencyServiceProvider"
+      ]
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8"
+  }
+}
